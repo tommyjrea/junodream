@@ -524,7 +524,7 @@ a {
 
 .music-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 40px;
 }
 
@@ -601,14 +601,13 @@ a {
     font-size: 12px;
     padding: 8px 24px;
   }
-}
 
-@media (max-width: 480px) {
-  .music-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    max-width: 320px;
-    margin: 0 auto;
+  .signup-section {
+    text-align: left;
+  }
+
+  .signup-form button {
+    align-self: flex-start;
   }
 }
 
@@ -636,6 +635,8 @@ a {
 
 .signup-section {
   max-width: 480px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .signup-section h2 {
@@ -699,7 +700,7 @@ a {
   cursor: pointer;
   transition: all 0.2s ease;
   text-transform: lowercase;
-  align-self: flex-start;
+  align-self: center;
 }
 
 .signup-form button:hover {

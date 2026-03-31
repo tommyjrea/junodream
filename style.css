@@ -236,6 +236,12 @@ a {
   padding: 60px 32px;
 }
 
+.page-content--centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 768px) {
   .page-content {
     margin-top: 68px;
@@ -523,20 +529,39 @@ a {
 /* ─── MUSIC PAGE ─── */
 
 .music-grid {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  display: flex;
   gap: 40px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 20px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.music-grid::-webkit-scrollbar {
+  height: 4px;
+}
+
+.music-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.music-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
 }
 
 .music-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  flex: 0 0 auto;
+  width: 240px;
 }
 
 .music-item__artwork {
   width: 100%;
-  aspect-ratio: 1;
   overflow: hidden;
   margin-bottom: 16px;
   background: var(--grey-light);
@@ -544,14 +569,9 @@ a {
 
 .music-item__artwork img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  display: block;
   transition: transform 0.4s ease;
-}
-
-.music-item__artwork img[src$=".svg"],
-.music-item__artwork img:not([src]) {
-  object-fit: contain;
 }
 
 .music-item:hover .music-item__artwork img {
@@ -565,6 +585,7 @@ a {
   font-weight: 400;
   margin-bottom: 12px;
   text-align: center;
+  white-space: nowrap;
 }
 
 .music-item__btn {
@@ -589,12 +610,21 @@ a {
 
 @media (max-width: 768px) {
   .music-grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 24px;
+    overflow-x: visible;
+    padding-bottom: 0;
+  }
+
+  .music-item {
+    width: auto;
+    flex: none;
   }
 
   .music-item__title {
     font-size: 14px;
+    white-space: normal;
   }
 
   .music-item__btn {
@@ -608,6 +638,11 @@ a {
 
   .signup-form button {
     align-self: flex-start;
+  }
+
+  .page-content--centered {
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
 

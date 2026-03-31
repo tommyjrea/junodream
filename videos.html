@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>videos — junodream</title>
+  <meta name="description" content="Watch music videos from junodream.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="site-logo">junodream</a>
+      <nav class="site-nav">
+        <a href="live.html">Live</a>
+        <a href="music.html">Music</a>
+        <a href="videos.html" class="active">Videos</a>
+        <a href="store.html">Store</a>
+        <a href="signup.html">Sign Up</a>
+      </nav>
+      <button class="hamburger" aria-label="Menu" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="live.html" onclick="closeMenu()">Live</a>
+    <a href="music.html" onclick="closeMenu()">Music</a>
+    <a href="videos.html" onclick="closeMenu()">Videos</a>
+    <a href="store.html" onclick="closeMenu()">Store</a>
+    <a href="signup.html" onclick="closeMenu()">Sign Up</a>
+  </nav>
+
+  <main class="page-content">
+    <h1 class="page-title">videos</h1>
+
+    <div class="videos-grid">
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/XhwILWjfdgY" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/A1V81Ne6kYw" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/ney18kCepKw" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/_KAL0OohCpk" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/AKahabCnGWk" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/0ghPpEwNYP4" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/eUJu_SM42kI" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/-sE3O4poPEE" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/yXaNpcM6cUk" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/2hi5YvtDDKg" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/6PlHxQqSL7o" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/nYKsUiM3XJI" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/BavKcO6NB5E" title="junodream video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    &copy; junodream 2026
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.hamburger').classList.toggle('open');
+      document.getElementById('mobileNav').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('mobileNav').classList.contains('open') ? 'hidden' : '';
+    }
+    function closeMenu() {
+      document.querySelector('.hamburger').classList.remove('open');
+      document.getElementById('mobileNav').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  </script>
+
+</body>
+</html>

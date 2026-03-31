@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/26375662/README.md)
 # junodream website
 
 Official website for junodream. Static site hosted on GitHub Pages.

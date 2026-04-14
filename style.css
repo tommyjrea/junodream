@@ -534,6 +534,7 @@ a {
   overflow-x: auto;
   overflow-y: hidden;
   padding-bottom: 20px;
+  align-items: flex-start;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
@@ -564,6 +565,7 @@ a {
 
 .music-item__artwork {
   width: 100%;
+  aspect-ratio: 1;
   overflow: hidden;
   margin-bottom: 16px;
   background: var(--grey-light);
@@ -571,7 +573,8 @@ a {
 
 .music-item__artwork img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
   transition: transform 0.4s ease;
 }

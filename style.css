@@ -528,12 +528,26 @@ a {
 
 /* ─── MUSIC PAGE ─── */
 
+/* Colour dots — junodream brand palette */
+.dot {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 1px;
+}
+.dot--red { background: #cc2936; }
+.dot--yellow { background: #d4a843; }
+.dot--teal { background: #1a8a7d; }
+.dot--navy { background: #1a3a5c; }
+.dot--grey { background: #d4d2cc; }
+
+/* Desktop: horizontal scroll row */
 .music-grid {
   display: flex;
-  gap: 40px;
+  gap: 24px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 20px;
+  padding-bottom: 24px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
@@ -552,50 +566,111 @@ a {
   border-radius: 2px;
 }
 
-.music-item {
+/* Card */
+.music-card {
+  flex: 0 0 auto;
+  width: calc((100vw - 64px - 144px) / 5);
+  min-width: 260px;
+  max-width: 380px;
+  background: var(--white);
+  border: 1px solid #eee;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  flex: 0 0 auto;
-  width: calc((100vw - 64px - 240px) / 5);
-  min-width: 240px;
-  max-width: 360px;
+  gap: 20px;
+  position: relative;
+  transition: border-color 0.3s ease;
 }
 
-.music-item__artwork {
+.music-card:hover {
+  border-color: var(--black);
+}
+
+/* Dark variant — alternating cards */
+.music-card--dark {
+  background: var(--black);
+  color: var(--white);
+  border-color: #222;
+}
+
+.music-card--dark:hover {
+  border-color: #666;
+}
+
+.music-card--dark .music-card__type {
+  color: #666;
+}
+
+.music-card--dark .music-card__btn {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.music-card--dark .music-card__btn:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* Dots row */
+.music-card__dots {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.music-card__dots--bottom {
+  justify-content: flex-end;
+  margin-top: auto;
+}
+
+/* Artwork */
+.music-card__artwork {
   width: 100%;
   overflow: hidden;
-  margin-bottom: 16px;
   background: var(--grey-light);
 }
 
-.music-item__artwork img {
+.music-card__artwork img {
   width: 100%;
   height: auto;
   display: block;
   transition: transform 0.4s ease;
 }
 
-.music-item:hover .music-item__artwork img {
+.music-card:hover .music-card__artwork img {
   transform: scale(1.03);
 }
 
-.music-item__title {
-  font-family: var(--font);
-  font-size: 16px;
-  letter-spacing: -0.05em;
-  font-weight: 400;
-  margin-bottom: 12px;
-  text-align: center;
-  white-space: nowrap;
+/* Info */
+.music-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.music-item__btn {
+.music-card__title {
+  font-family: var(--font);
+  font-size: 22px;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.music-card__type {
+  font-family: var(--font);
+  font-size: 13px;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+  color: var(--grey-mid);
+  text-transform: lowercase;
+}
+
+.music-card__btn {
   font-family: var(--font);
   font-size: 14px;
   letter-spacing: -0.05em;
   font-weight: 400;
-  padding: 10px 32px;
+  padding: 10px 28px;
   border: 1px solid var(--black);
   background: transparent;
   color: var(--black);
@@ -603,34 +678,37 @@ a {
   transition: all 0.2s ease;
   text-transform: lowercase;
   display: inline-block;
+  align-self: flex-start;
+  margin-top: 4px;
 }
 
-.music-item__btn:hover {
+.music-card__btn:hover {
   background: var(--black);
   color: var(--white);
 }
 
+/* ── Mobile: single column, vertical scroll ── */
 @media (max-width: 768px) {
   .music-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     overflow-x: visible;
     padding-bottom: 0;
   }
 
-  .music-item {
-    width: auto;
-    flex: none;
+  .music-card {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
   }
 
-  .music-item__title {
-    font-size: 14px;
-    white-space: normal;
+  .music-card__title {
+    font-size: 20px;
   }
 
-  .music-item__btn {
-    font-size: 12px;
+  .music-card__btn {
+    font-size: 13px;
     padding: 8px 24px;
   }
 

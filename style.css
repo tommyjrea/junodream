@@ -528,26 +528,12 @@ a {
 
 /* ─── MUSIC PAGE ─── */
 
-/* Colour dots — junodream brand palette */
-.dot {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  border-radius: 1px;
-}
-.dot--red { background: #cc2936; }
-.dot--yellow { background: #d4a843; }
-.dot--teal { background: #1a8a7d; }
-.dot--navy { background: #1a3a5c; }
-.dot--grey { background: #d4d2cc; }
-
-/* Desktop: horizontal scroll row */
 .music-grid {
   display: flex;
-  gap: 24px;
+  gap: 40px;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 24px;
+  padding-bottom: 20px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: #ccc transparent;
@@ -566,111 +552,50 @@ a {
   border-radius: 2px;
 }
 
-/* Card */
-.music-card {
-  flex: 0 0 auto;
-  width: calc((100vw - 64px - 144px) / 5);
-  min-width: 260px;
-  max-width: 380px;
-  background: var(--white);
-  border: 1px solid #eee;
-  padding: 24px;
+.music-item {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  position: relative;
-  transition: border-color 0.3s ease;
+  align-items: center;
+  flex: 0 0 auto;
+  width: calc((100vw - 64px - 240px) / 5);
+  min-width: 240px;
+  max-width: 360px;
 }
 
-.music-card:hover {
-  border-color: var(--black);
-}
-
-/* Dark variant — alternating cards */
-.music-card--dark {
-  background: var(--black);
-  color: var(--white);
-  border-color: #222;
-}
-
-.music-card--dark:hover {
-  border-color: #666;
-}
-
-.music-card--dark .music-card__type {
-  color: #666;
-}
-
-.music-card--dark .music-card__btn {
-  border-color: var(--white);
-  color: var(--white);
-}
-
-.music-card--dark .music-card__btn:hover {
-  background: var(--white);
-  color: var(--black);
-}
-
-/* Dots row */
-.music-card__dots {
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
-.music-card__dots--bottom {
-  justify-content: flex-end;
-  margin-top: auto;
-}
-
-/* Artwork */
-.music-card__artwork {
+.music-item__artwork {
   width: 100%;
   overflow: hidden;
+  margin-bottom: 16px;
   background: var(--grey-light);
 }
 
-.music-card__artwork img {
+.music-item__artwork img {
   width: 100%;
   height: auto;
   display: block;
   transition: transform 0.4s ease;
 }
 
-.music-card:hover .music-card__artwork img {
+.music-item:hover .music-item__artwork img {
   transform: scale(1.03);
 }
 
-/* Info */
-.music-card__info {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.music-card__title {
+.music-item__title {
   font-family: var(--font);
-  font-size: 22px;
+  font-size: 16px;
   letter-spacing: -0.05em;
   font-weight: 400;
-  line-height: 1.2;
+  margin-bottom: 12px;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.music-card__type {
-  font-family: var(--font);
-  font-size: 13px;
-  letter-spacing: -0.05em;
-  font-weight: 400;
-  color: var(--grey-mid);
-  text-transform: lowercase;
-}
-
-.music-card__btn {
+.music-item__btn {
   font-family: var(--font);
   font-size: 14px;
   letter-spacing: -0.05em;
   font-weight: 400;
-  padding: 10px 28px;
+  padding: 10px 32px;
   border: 1px solid var(--black);
   background: transparent;
   color: var(--black);
@@ -678,37 +603,36 @@ a {
   transition: all 0.2s ease;
   text-transform: lowercase;
   display: inline-block;
-  align-self: flex-start;
-  margin-top: 4px;
 }
 
-.music-card__btn:hover {
+.music-item__btn:hover {
   background: var(--black);
   color: var(--white);
 }
 
-/* ── Mobile: single column, vertical scroll ── */
 @media (max-width: 768px) {
   .music-grid {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 32px;
     overflow-x: visible;
     padding-bottom: 0;
   }
 
-  .music-card {
+  .music-item {
     width: 100%;
     min-width: unset;
     max-width: unset;
+    flex: none;
   }
 
-  .music-card__title {
-    font-size: 20px;
+  .music-item__title {
+    font-size: 14px;
+    white-space: normal;
   }
 
-  .music-card__btn {
-    font-size: 13px;
+  .music-item__btn {
+    font-size: 12px;
     padding: 8px 24px;
   }
 
